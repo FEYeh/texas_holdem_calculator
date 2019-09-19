@@ -526,25 +526,20 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
     }
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onPanDown: (_) {
-        FocusScope.of(context).requestFocus(FocusNode());
-      },
-      child: Scaffold(
-        key: _scaffoldKey,
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: body,
-        floatingActionButton: CircleFloatingButton.floatingActionButton(
-          items: itemsActionBar,
-          color: Colors.deepPurple,
-          icon: Icons.settings,
-          duration: Duration(milliseconds: 500),
-          curveAnim: Curves.ease
-        ),
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
+      body: body,
+      floatingActionButton: CircleFloatingButton.floatingActionButton(
+        items: itemsActionBar,
+        color: Colors.deepPurple,
+        icon: Icons.settings,
+        duration: Duration(milliseconds: 500),
+        curveAnim: Curves.ease
+      ),
+      resizeToAvoidBottomPadding: false,
     );
   }
 }
